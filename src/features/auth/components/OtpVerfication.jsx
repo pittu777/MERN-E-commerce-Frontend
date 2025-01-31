@@ -28,7 +28,7 @@ export const OtpVerfication = () => {
         else if(loggedInUser && loggedInUser?.isVerified){
             navigate("/")
         }
-    },[loggedInUser])
+    },[loggedInUser,navigate])
 
     const handleSendOtp=()=>{
         const data={user:loggedInUser?._id}
