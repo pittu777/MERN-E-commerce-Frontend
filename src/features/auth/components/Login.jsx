@@ -23,13 +23,16 @@ export const Login = () => {
   
   // handles user redirection
   useEffect(()=>{
+    if(status==='pending'){
+      return;
+    }
     if(loggedInUser && loggedInUser?.isVerified){
       navigate("/")
     }
     else if(loggedInUser && !loggedInUser?.isVerified){
       navigate("/verify-otp")
     }
-  },[loggedInUser])
+  },[loggedInUser,status,navigate]);
 
   // handles login error and toast them
   useEffect(()=>{
