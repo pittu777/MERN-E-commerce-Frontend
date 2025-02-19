@@ -20,17 +20,9 @@ export const OtpVerfication = () => {
     const otpVerificationStatus=useSelector(selectOtpVerificationStatus)
     const otpVerificationError=useSelector(selectOtpVerificationError)
 
-    // handles the redirection
-    // useEffect(()=>{
-    //     if(!loggedInUser){
-    //         navigate('/login')
-    //     }
-    //     else if(loggedInUser && loggedInUser?.isVerified){
-    //         navigate("/")
-    //     }
-    // },[loggedInUser,navigate])
+    
     useEffect(() => {
-        console.log('LoggedIn User:', loggedInUser);  // Log the user state
+        console.log('LoggedIn User:', loggedInUser);
         if (!loggedInUser) {
           navigate('/login');
         } else if (loggedInUser && !loggedInUser?.isVerified) {
